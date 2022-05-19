@@ -9,8 +9,8 @@ local library = {
 	subs = {},
 	colored = {},
 	configuration = {
-		hideKeybind = Enum.KeyCode.RightShift,
-		smoothDragging = false,
+		hideKeybind = Enum.KeyCode.RightAlt,
+		smoothDragging = true,
 		easingStyle = Enum.EasingStyle.Quart,
 		easingDirection = Enum.EasingDirection.Out
 	},
