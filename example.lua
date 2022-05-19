@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mlartix/roblox_ui_library/main/lib.lua"), true)()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mlartix/roblox_ui_library/main/lib.lua", true))()
 local Wait = library.subs.Wait -- Only returns if the GUI has not been terminated. For 'while Wait() do' loops
 
 local PepsisWorld = library:CreateWindow({
