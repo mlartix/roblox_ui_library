@@ -701,7 +701,6 @@ end
 function library:CreateWindow(options, ...)
 	options = (options and type(options) == "string" and resolvevararg("Window", options, ...)) or options
 	local homepage = nil
-	local windowoptions = options
 	local windowName = options.Name or "Unnamed Window"
 	options.Name = windowName
 	if windowName and #windowName > 0 and library.WorkspaceName == "Pepsi Lib" then
@@ -5730,17 +5729,13 @@ function library:CreateWindow(options, ...)
 			Callback = updatecolorsnotween
 		}}, {"AddDropdown", "__Designer.Dropdown.BackgroundThemes", backgroundsection, {
             Name = "Background Themes",
-            List = {
-                [1] = "", -- Insert nothing here. 
-                [2] = "Heart Pattern", -- 6073763729
-                [3] = "Abstract Pattern", -- 6073743880
-                [4] = "Hexagon Pattern", -- 6073628849
-                [5] = "Circle Pattern", -- 6071579805
-                [6] = "Flower Pattern", -- 6071575946
-                [7] = "Floral Pattern", -- 5553946671
-            },
+            List = {"Nothing", "Heart Pattern", "Abstract Pattern", "Hexagon Pattern", "Circle Pattern", "Flower Pattern", "Floral Pattern"},
 			Callback = function(newValue)
-                designerelements["__Designer.Textbox.ImageAssetID"]:Set(BackgroundThemes[newValue])
+                if newValue == "Nothing" then
+                    designerelements["__Designer.Textbox.ImageAssetID"]:Set("Insert Decal ID Here")
+                else
+                    designerelements["__Designer.Textbox.ImageAssetID"]:Set(BackgroundThemes[newValue])
+                end
             end
 
 		}}, {"AddColorpicker", "__Designer.Colorpicker.ImageColor", backgroundsection, {
