@@ -1,10 +1,11 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/mlartix/roblox_ui_library/main/lib.lua", true))()
-local Wait = library.subs.Wait -- Only returns if the GUI has not been terminated. For 'while Wait() do' loops
+local  Wait = library.subs.Wait -- Only returns if the GUI has not been terminated. For 'while Wait() do' loops
 
 local PepsisWorld = library:CreateWindow({
     Name = "Banana World",
     Themeable = {
-    Info = "Discord Server: 9YePwhWrfN"
+        DiscordServer = "Server | .gg/9YePwhWrfN",
+        Credits = "Library by Pepsi#5229\nForked by Tee Hee#9326",
     }
 })
 
